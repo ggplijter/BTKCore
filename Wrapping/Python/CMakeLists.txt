@@ -1,6 +1,9 @@
  # SWIG 1.3 is not enough because some unit tests failed with this version
 FIND_PACKAGE(SWIG 2.0 REQUIRED)
-FIND_PACKAGE(PythonLibs REQUIRED)
+FIND_PACKAGE(PythonInterp 3.13 REQUIRED)
+FIND_PACKAGE(PythonLibs 3.13 REQUIRED)
+# FIND_PACKAGE(Python 3.9 EXACT REQUIRED COMPONENTS Development)
+# SET(PYTHON_INCLUDE_PATH  ${Python_INCLUDE_DIRS})
 FIND_PACKAGE(NumPy REQUIRED)
 
 IF (UNIX AND NOT APPLE AND HAVE_64_BIT AND NOT BUILD_SHARED_LIBS)
@@ -31,7 +34,7 @@ SET(BTKSWIG_CPP_SRCS
 SET_SOURCE_FILES_PROPERTIES(btkSwig.i PROPERTIES CPLUSPLUS ON)
 SET_SOURCE_FILES_PROPERTIES(btkSwig.i PROPERTIES SWIG_FLAGS "-includeall")
 
-SWIG_ADD_MODULE(btk python btkSwig.i ${BTKSWIG_CPP_SRCS})
+SWIG_ADD_LIBRARY(btk LANGUAGE python SOURCES btkSwig.i ${BTKSWIG_CPP_SRCS})
 
 # Python extension modules on Windows must have the extension ".pyd" instead of ".dll" since Python 2.5.
 IF(WIN32 AND NOT CYGWIN)

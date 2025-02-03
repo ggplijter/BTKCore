@@ -1,4 +1,6 @@
-FIND_PACKAGE(PythonInterp REQUIRED QUIET)
+# FIND_PACKAGE(PythonInterp REQUIRED QUIET)
+FIND_PACKAGE(Python 3.9 EXACT REQUIRED COMPONENTS Interpreter)
+SET(PYTHON_EXECUTABLE  ${Python_EXECUTABLE})
 
 MESSAGE(STATUS "---------------------------")
 MESSAGE(STATUS "Packaging Python Binding...")
