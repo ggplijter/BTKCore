@@ -233,7 +233,7 @@ struct btkStringAxes
   std::string Axis3;
 };
 
-%nestedworkaround SeparateKnownVirtualMarkersFilter::StringAxes;
+// %nestedworkaround SeparateKnownVirtualMarkersFilter::StringAxes;
 
 %{
   typedef btkSeparateKnownVirtualMarkersFilter_impl::StringAxes btkStringAxes;

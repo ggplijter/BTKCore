@@ -25,3 +25,7 @@ Built from Ubuntu 12.04 and GCC 4.6. Configured to build C++ modules as shared 6
 
 ###Windows 7 32-bit (C++, Python, Octave) [![Build Status](http://ec2-54-226-241-28.compute-1.amazonaws.com:8080/buildStatus/icon?job=BTKCore)](http://ec2-54-226-241-28.compute-1.amazonaws.com:8080/view/All/job/BTKCore/)###
 Built from MSVC 2010 (Windows SDK 7.1). Configured to build C++ modules as shared 32-bit libraries. The Python binding is built with Python 2.7.5, Numpy 1.8.0 and Swig 2.0.11. The Octave binding is built with Octave 3.6.4.
+
+NOTE 04/02/2025: 
+###Windows 11 64-bit (C++, Python) ###
+Built from Visual Studio Community 2022. Configured to build C++ modules as shared 64-bit libraries with toolset version 143 (MSVC version=14.42.34433). The Python binding is built with Python 3.13.1, Numpy 2.2.2 and Swig 4.3.1.
