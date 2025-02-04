@@ -1,5 +1,5 @@
 # FIND_PACKAGE(PythonInterp REQUIRED QUIET)
-FIND_PACKAGE(Python 3.9 EXACT REQUIRED COMPONENTS Interpreter)
+FIND_PACKAGE(Python 3.13 EXACT REQUIRED COMPONENTS Interpreter)
 SET(PYTHON_EXECUTABLE  ${Python_EXECUTABLE})
 
 MESSAGE(STATUS "---------------------------")
@@ -95,12 +95,13 @@ ELSEIF(UNIX)
   MESSAGE(STATUS " -> Create DEB package")
   EXECUTE_PROCESS(COMMAND bash "${BTK_PYTHON_PACKAGE_SOURCE_DIR}/../linux-create-deb-package.sh"
                   WORKING_DIRECTORY "${BTK_BINARY_DIR}/dist")
-ELSEIF(WIN32)
-  MESSAGE(STATUS " -> Create Windows installer")
-  MESSAGE(STATUS "    WARNING: This installer cannot detect the dependencies.")
-  MESSAGE(STATUS "             The Python package 'numpy' must be installed manually.")
-  EXECUTE_PROCESS(COMMAND ${PYTHON_EXECUTABLE} setup.py --quiet bdist_wininst
-                  WORKING_DIRECTORY ${BTK_PYTHON_PACKAGE_BINARY_DIR})
-ELSE(APPLE)
-  MESSAGE(WARNING "Unsupported platform to fixup dependencies (if any)")
 ENDIF(APPLE)
+# ELSEIF(WIN32)
+#  MESSAGE(STATUS " -> Create Windows installer")
+#  MESSAGE(STATUS "    WARNING: This installer cannot detect the dependencies.")
+#  MESSAGE(STATUS "             The Python package 'numpy' must be installed manually.")
+#  EXECUTE_PROCESS(COMMAND ${PYTHON_EXECUTABLE} setup.py --quiet bdist_wininst
+#                  WORKING_DIRECTORY ${BTK_PYTHON_PACKAGE_BINARY_DIR})
+#ELSE(APPLE)
+#  MESSAGE(WARNING "Unsupported platform to fixup dependencies (if any)")
+#ENDIF(APPLE)
