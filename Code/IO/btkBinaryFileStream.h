@@ -250,6 +250,6 @@ namespace btk
   };
 };
 
-// #include "btkBinaryFileStream.tpp"
+#include "btkBinaryFileStream.tpp"
 
 #endif // __btkBinaryFileStream_h

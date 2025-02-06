@@ -39,8 +39,6 @@
 #include "btkConvert.h"
 #include "btkLogger.h"
 
-#include "btkBinaryStream.tpp"
-
 #include <limits>
 
 #include <pugixml.hpp>
