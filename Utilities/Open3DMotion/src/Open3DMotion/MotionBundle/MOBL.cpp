@@ -18,7 +18,7 @@ namespace Open3DMotion
 		REGISTER_MEMBER(FormatVersion);
 	}
 
-	bool MOBLFormat::Probe(MOBLReadOptions& readoptions, std::istream& is) throw(MotionFileException)
+	bool MOBLFormat::Probe(MOBLReadOptions& readoptions, std::istream& is) noexcept(false)
 	{
 		/*
 	 * The signature block is stored at the beginning of a motion bundle file so the file
@@ -104,7 +104,7 @@ namespace Open3DMotion
 		}
 	}
 
-	bool MOBLFormatReader::PositionReader(UInt32 doc_index_needed)  throw(MotionFileException)
+	bool MOBLFormatReader::PositionReader(UInt32 doc_index_needed)  noexcept(false)
 	{
 		// must reset reader if we've already read past this index
 		// or if no reader yet created
@@ -148,7 +148,7 @@ namespace Open3DMotion
 		return stream->HaveMore();
 	}
 
-	UInt32 MOBLFormatReader::TrialCount()  throw(MotionFileException)
+	UInt32 MOBLFormatReader::TrialCount()  noexcept(false)
 	{
 		UInt32 count(0);
 		while (PositionReader(count+1))
@@ -156,7 +156,7 @@ namespace Open3DMotion
 		return count;
 	}
 
-	TreeValue* MOBLFormatReader::ReadTrial(UInt32 index, const BinMemFactory& memfactory /*=BinMemFactoryDefault()*/) throw(MotionFileException)
+	TreeValue* MOBLFormatReader::ReadTrial(UInt32 index, const BinMemFactory& memfactory /*=BinMemFactoryDefault()*/) noexcept(false)
 	{
 		// move to required trial
 		UInt32 doc_index_needed = index + 1;

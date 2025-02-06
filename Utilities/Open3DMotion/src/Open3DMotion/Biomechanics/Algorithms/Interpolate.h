@@ -23,10 +23,10 @@ namespace Open3DMotion
 	public:
 		
 		// Apply to 3D sequence (individual xyz coords treated independently)
-		static void Linear(TimeSequence& ts) throw(NoSuchFieldException);
+		static void Linear(TimeSequence& ts) noexcept(false);
 
 		// Apply to 3D sequence (individual xyz coords treated independently)
-		static void Cubic(TimeSequence& ts, size_t maxnumslopesamples = cubic_default_maxnumslopesamples) throw(NoSuchFieldException);
+		static void Cubic(TimeSequence& ts, size_t maxnumslopesamples = cubic_default_maxnumslopesamples) noexcept(false);
 
 	};
 }

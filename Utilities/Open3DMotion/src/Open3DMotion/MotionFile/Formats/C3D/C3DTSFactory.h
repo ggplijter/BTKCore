@@ -25,7 +25,7 @@ namespace Open3DMotion
 	class TSC3DConstIter : public BinConstIter2<double, UInt8>
 	{
 	public:
-			TSC3DConstIter(const TimeSequence& ts) throw(NoSuchFieldException) :
+			TSC3DConstIter(const TimeSequence& ts) noexcept(false) :
 				BinConstIter2<double, UInt8>(ts, 
 					TSFactoryValue::fieldname_value, 3, 
 					TSFactoryOccValue::fieldname_occluded, 1)
@@ -83,7 +83,7 @@ namespace Open3DMotion
 	class TSC3DIter : public TSC3DConstIter
 	{
 	public:
-		TSC3DIter(TimeSequence& ts) throw(NoSuchFieldException) :
+		TSC3DIter(TimeSequence& ts) noexcept(false) :
 				TSC3DConstIter(ts)
 		{
 		}

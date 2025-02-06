@@ -46,18 +46,18 @@ namespace Open3DMotion
 		/** Read the specified trial.
 		    @param index Zero-based index of trial to read
 			*/
-		TreeValue* ReadTrial(UInt32 index, const BinMemFactory& memfactory = BinMemFactoryDefault()) throw(MotionFileException);
+		TreeValue* ReadTrial(UInt32 index, const BinMemFactory& memfactory = BinMemFactoryDefault()) noexcept(false);
 
 		/** Find total trials in the bundle.
 				@return The number of trials
 		 */
-		UInt32 TrialCount()  throw(MotionFileException);
+		UInt32 TrialCount()  noexcept(false);
 
 	protected:
 		
 		void ClearReader();
 
-		bool PositionReader(UInt32 doc_index_needed)  throw(MotionFileException);
+		bool PositionReader(UInt32 doc_index_needed)  noexcept(false);
 
 	protected:
     std::auto_ptr<std::istream> is;
@@ -72,7 +72,7 @@ namespace Open3DMotion
 	public:
     
 		/** Establish whether the stream is in MOBL format */
-    bool Probe(MOBLReadOptions& readoptions, std::istream& is) throw(MotionFileException);
+    bool Probe(MOBLReadOptions& readoptions, std::istream& is) noexcept(false);
 
 		/** For valid MOBL streams create a reader object to extract trial information */
 		MOBLFormatReader* ReadBegin(std::istream* is, const MOBLReadOptions& readoptions);

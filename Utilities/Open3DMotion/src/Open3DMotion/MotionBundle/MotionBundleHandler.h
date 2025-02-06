@@ -31,7 +31,7 @@ namespace Open3DMotion
 		/** Probe the file format and return a valid reader or throw an exception 
 		    @return An valid object to read the file.
 				@throw MotionFileException if there was a problem recognising or reading the file format */
-		MOBLFormatReader* Open(const char* filename) throw(MotionFileException);
+		MOBLFormatReader* Open(const char* filename) noexcept(false);
 
 	protected:
 		std::auto_ptr<MOBLFormat> mobl;

@@ -20,7 +20,7 @@ namespace Open3DMotion
 	{
 	}
 
-	MOBLFormatReader* MotionBundleHandler::Open(const char* filename) throw(MotionFileException)
+	MOBLFormatReader* MotionBundleHandler::Open(const char* filename) noexcept(false)
 	{
 #ifdef _MSC_VER
 		// creating a C-style file object may work better with UTF-8
