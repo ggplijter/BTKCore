@@ -1,6 +1,6 @@
 # First release build with CMAKE 2.6.2.
 # The prior versions of CMAKE have not been tested
-CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.31)
 # BTK: Biomechanical ToolKit
 PROJECT(BTK)
 
@@ -370,8 +370,6 @@ INCLUDE (${BTK_CMAKE_MODULE_PATH}/btkGenerateBTKConfig.cmake)
 
 IF(NOT BTK_INSTALL_NO_DEVELOPMENT)
   INSTALL(FILES
-    ${BTK_BINARY_DIR}/BTKBuildSettings.cmake
-    ${BTK_BINARY_DIR}/BTKLibraryDepends.cmake
     ${BTK_CMAKE_MODULE_PATH}/FindBTK.cmake
     ${BTK_BINARY_DIR}/UseBTK.cmake
     DESTINATION ${BTK_INSTALL_SHARE_DIR_CM24}
