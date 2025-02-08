@@ -177,27 +177,27 @@ namespace btk
     ByteOrderBinaryFileStream() : BinaryFileStream() {};
     ByteOrderBinaryFileStream(const std::string& filename, OpenMode mode) : BinaryFileStream(filename, mode) {};
     // ~ByteOrderBinaryFileStream(); // Implicit.  
-    BTK_IO_EXPORT virtual int16_t ReadI16();
+    virtual int16_t ReadI16();
     using BinaryFileStream::ReadI16;
-    BTK_IO_EXPORT virtual uint16_t ReadU16();
+    virtual uint16_t ReadU16();
     using BinaryFileStream::ReadU16;
-    BTK_IO_EXPORT virtual int32_t ReadI32(); 
+    virtual int32_t ReadI32();
     using BinaryFileStream::ReadI32;
-    BTK_IO_EXPORT virtual uint32_t ReadU32();
+    virtual uint32_t ReadU32();
     using BinaryFileStream::ReadU32;
-    BTK_IO_EXPORT virtual int64_t ReadI64(); 
+    virtual int64_t ReadI64();
     using BinaryFileStream::ReadI64;
-    BTK_IO_EXPORT virtual uint64_t ReadU64();
+    virtual uint64_t ReadU64();
     using BinaryFileStream::ReadU64;
-    BTK_IO_EXPORT virtual float ReadFloat();
+    virtual float ReadFloat();
     using BinaryFileStream::ReadFloat;
-    BTK_IO_EXPORT virtual double ReadDouble();
+    virtual double ReadDouble();
     using BinaryFileStream::ReadDouble;
-    BTK_IO_EXPORT virtual size_t Write(int16_t value);
-    BTK_IO_EXPORT virtual size_t Write(uint16_t value);
-    BTK_IO_EXPORT virtual size_t Write(int32_t value);
-    BTK_IO_EXPORT virtual size_t Write(uint32_t value);
-    BTK_IO_EXPORT virtual size_t Write(float value);
+    virtual size_t Write(int16_t value);
+    virtual size_t Write(uint16_t value);
+    virtual size_t Write(int32_t value);
+    virtual size_t Write(uint32_t value);
+    virtual size_t Write(float value);
     using BinaryFileStream::Write;
   
   private:
